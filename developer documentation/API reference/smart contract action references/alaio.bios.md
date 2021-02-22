@@ -2,16 +2,16 @@
 
 **Type:** class
 
-The alaio.bios is the first sample of system contract provided by Alacrity through the ALAIO platform. It is a minimalist system contract because it only supplies the actions that are absolutely critical to bootstrap a chain and nothing more. This allows for a chain agnostic approach to bootstrapping a chain.
+Alaio.bios is the first sample of system contract provided by Alacrity through the ALAIO platform. It is a simple system contract because it only supplies the steps that are absolutely essential to bootstrap a chain and nothing else. This allows for a chain agnostic process to bootstrapping a chain.
 
-Just like in the `alaio.system` sample contract implementation, there are a few actions which are not implemented at the contract level (`newaccount`, `updateauth`, `deleteauth`, `linkauth`, `unlinkauth`, `canceldelay`, `onerror`, `setabi`, `setcode`), they are just declared in the contract so they will show in the contract's ABI and users will be able to push those actions to the chain via the account holding the `alaio.system` contract, but the implementation is at the ALAIO core level. They are referred to as ALAIO native actions.
+similar to the `alaio.system` sample contract implementation, there are a handful of measures which are not implemented at the contract level (`newaccount`, `updateauth`, `deleteauth`, `linkauth`, `unlinkauth`, `canceldelay`, `onerror`, `setabi`, `setcode`), they're simply declared in the contract so they will show in the contract's ABI and users will be able to push those actions to the chain via the account holding the `alaio.system` contract, but the implementation is at the ALAIO core level. They are known as ALAIO native actions.
 
 ## newaccount
 
 **Type:** void
 
-New account action, called after a new account is created. This code enforces resource-limits rules for new accounts as well as new account naming conventions.
-
+New account action, called after a new account is created. This code carries out resource-limits rules for new accounts as well as new account naming conventions.
+ 
 * accounts cannot contain '.' symbols which forces all acccounts to be 12 characters long without '.' until a future account auction process is implemented which prevents name squatting.
 * new accounts must stake a minimal number of tokens (as set in system parameters) therefore, this method will execute an inline buyram from receiver for newacnt in an amount equal to the current new account creation fee.
 
@@ -32,7 +32,7 @@ aut | - the json describing the permission authorization.
 
 **Type:** void
 
-Delete authorization action deletes the authorization for an account's permission.
+Delete authorization action removes the authorization for an account's permission.
 Parameter Name | Description
 account | - the account for which the permission authorization is deleted,
 permission | - the permission name been deleted.
@@ -41,7 +41,7 @@ permission | - the permission name been deleted.
 
 **Type:** void
 
-Link authorization action assigns a specific action from a contract to a permission you have created. Five system actions can not be linked `updateauth`, `deleteauth`, `linkauth`, `unlinkauth`, and `canceldelay`. This is useful because when doing authorization checks, the ALAIO based blockchain starts with the action needed to be authorized (and the contract belonging to), and looks up which permission is needed to pass authorization validation. If a link is set, that permission is used for authoraization validation otherwise then active is the default, with the exception of `alaio.any`. `alaio.any` is an implicit permission which exists on every account; you can link actions to `alaio.any` and that will make it so linked actions are accessible to any permissions defined for the account.
+Link authorization action designates a particular action from a contract to a permission you have created. Five system actions can not be linked `updateauth`, `deleteauth`, `linkauth`, `unlinkauth`, and `canceldelay`. This has its uses because when doing authorization checks, the ALAIO based blockchain proceeds with the action necessary to be authorized (and the contract belonging to), and looks up which permission is needed to pass authorization validation. If a link is set, that permission is used for authoraization validation otherwise then active is the default, with the exception of `alaio.any`. `alaio.any` is an implicit permission which exists on every account; you can link actions to `alaio.any` and this will ensure that any linked actions are accessible to all permissions defined for the account.
 
 Parameter Name | Description
 --- | ---
@@ -90,7 +90,7 @@ code | - the code content to be set, in the form of a blob binary..
 
 **Type:** void
 
-Set abi action sets the abi for contract identified by `account` name. Creates an entry in the abi_hash_table index, with `account` name as key, if it is not already present and sets its value with the abi hash. Otherwise it is updating the current abi hash value for the existing `account` key.
+Set abi action sets the abi for contract identified by `account` name. Generates an entry in the abi_hash_table index, with `account` name as key, if it is not already present and sets its value with the abi hash. Otherwise it is reforming the current abi hash value for the existing `account` key.
 
 Parameter Name | Description
 --- | ---
@@ -101,7 +101,7 @@ abi | - the abi hash represented as a vector of characters
 
 **Type:** void
 
-On error action, notification of this action is delivered to the sender of a deferred transaction when an objective error occurs while executing the deferred transaction. This action is not meant to be called directly.
+On error action, informing of this action is conveyed to the sender of a deferred transaction when an objective error occurs while implementing the deferred transaction. This action is not meant to be called directly.
 
 Parameter Name | Description
 --- | ---
@@ -112,7 +112,7 @@ sent_trx | - the deferred transaction that failed.
 
 **Type:** void
 
-Set privilege action allows to set privilege status for an account (turn it on/off).
+Set privilege action enables settting the privilege status for an account (activate/deactivate).
 
 Parameter Name | Description
 --- | ---
@@ -136,7 +136,7 @@ cpu_weight | - fractionally proportionate cpu limit of available resources based
 
 **Type:** void
 
-Set producers action, sets a new list of active producers, by proposing a schedule change, once the block that contains the proposal becomes irreversible, the schedule is promoted to "pending" automatically. Once the block that promotes the schedule is irreversible, the schedule will become "active".
+Set producers action, sets a new list of active producers, by proposing a schedule alteration, once the block that contains the proposal becomes irreversible, the schedule is promoted to "pending" automatically. Once the block that promotes the schedule is irremediable, the schedule will then become "active".
 
 Parameter Name | Description
 --- | ---
@@ -146,7 +146,7 @@ schedule | - New list of active producers to set
 
 **Type:** void
 
-Set params action, sets the blockchain parameters. By tuning these parameters, various degrees of customization can be achieved.
+Set params action, sets the blockchain parameters. By adjusting these parameters, multiple variations of customization can be achieved.
 
 Parameter Name | Description
 --- | ---
@@ -156,7 +156,7 @@ params | - New blockchain parameters to set
 
 **Type:** void
 
-Require authorization action, checks if the account name `from` passed in as param has authorization to access current action, that is, if it is listed in the action's allowed permissions vector.
+Authorization action is required, checks if the account name `from` passed in as param has authorization to access current action, that is, if it is listed in the action's allowed permissions vector.
 
 Parameter Name | Description
 --- | ---
@@ -176,7 +176,7 @@ feature_digest | - hash of the protocol feature to activate.
 
 **Type:** void
 
-Require activated action, asserts that a protocol feature has been activated
+Activated action is required, submits that a protocol feature is confirmed
 
 Parameter Name | Description
 --- | ---
