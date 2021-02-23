@@ -7,9 +7,9 @@ The alaio.msig system contract allows for creation of proposed transactions whic
 In short, the workflow to propose, review, approve and then executed a transaction it can be described by the following:
 
 * first you create a transaction json file,
-* then you submit this proposal to the alaio.msig contract, and you also insert the account permissions required to approve this proposal into the command that submits the proposal to the blockchain,
-* the proposal then gets stored on the blockchain by the alaio.msig contract, and is accessible for review and approval to those accounts required to approve it,
-* after each of the appointed accounts required to approve the proposed transactions reviews and approves it, you can execute the proposed transaction. The alaio.msig contract will execute it automatically, but not before validating that the transaction has not expired, it is not cancelled, and it has been signed by all the permissions in the initial proposal's required permission list.
+* then you submit this proposal to the alaio.msig contract, and you also push the account permissions required to approve this proposal into the command that submits the proposal to the blockchain,
+* the proposal then gets stored on the blockchain by the alaio.msig contract, and is available for analysis and acceptance to those accounts required,
+* after each of the appointed accounts required to approve the proposed transactions reviews and approves it, you can execute the proposed transaction. The alaio.msig contract will execute it automatically, but not before certifying that the transaction has not expired or been rejected, and it has been signed by all the permissions in the initial proposal's required permission list.
 
 ## propose
 
@@ -26,9 +26,9 @@ trx | - Proposed transaction
 
 ## approve
 
-**Type:** void
+**Type:** void 
 
-Approve action approves an existing proposal. Allows an account, the owner of level permission, to approve a proposal proposal_name proposed by proposer. If the proposal's requested approval list contains the level permission then the level permission is moved from internal requested_approvals list to internal provided_approvals list of the proposal, thus persisting the approval for the proposal_name proposal. Storage changes are billed to proposer.
+Approve action grants a current proposal. Authorizes the owner of level permission account to permit a proposition proposal_name offered by the proposer. If the proposal's requested approval list contains the level permission then the level permission is moved from internal requested_approvals list to internal provided_approvals list of the proposal, thus pushing the approval for the proposal_name proposition. Storage updates are charged to the proposers account.
 
 Parameter Name | Description
 --- | ---
@@ -41,7 +41,7 @@ proposal_hash | - Transaction's checksum
 
 **Type:** void
 
-Unapprove action revokes an existing proposal. This action is the reverse of the approve action: if all validations pass the level permission is erased from internal provided_approvals and added to the internal requested_approvals list, and thus un-approve or revoke the proposal.
+Unapprove action removes an existing proposal. This action is counter to the approve action: if all endorsments pass the level permission is removed from internal provided_approvals and added to the internal requested_approvals list, and thus un-approve the proposal.
 
 Parameter Name | Description
 --- | ---
@@ -53,7 +53,7 @@ level | - Permission level revoking approval for proposal
 
 **Type:** void
 
-Cancel action cancels an existing proposal.
+Cancel action declines an existing proposal.
 
 Parameter Name | Description
 --- | ---
@@ -65,7 +65,7 @@ canceler | - The account cancelling the proposal (only the proposer can cancel a
 
 **Type:** void
 
-Exec action allows an executer account to execute a proposal.
+Exec action allows an executer account to follow through with a proposal.
 
 Preconditions:
 
@@ -75,7 +75,7 @@ Preconditions:
 * proposed transaction is not expired,
 * and approval accounts are not found in invalidations table.
 
-If all preconditions are met the transaction is executed as a deferred transaction, and the proposal is erased from the proposals table.
+If all current prerequisites are met the transaction is carried out as a deferred transaction, and the proposal is removed from the proposals table.
 
 Parameter Name | Description
 --- | ---
