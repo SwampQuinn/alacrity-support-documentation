@@ -2,7 +2,7 @@
 
 **Type:** class
 
-The `alaio.token` sample system contract defines the structures and actions that allow users to create, issue, and manage tokens for ALAIO based blockchains. It demonstrates one way to implement a smart contract which allows for creation and management of tokens. It is possible for one to create a similar contract which suits different needs. However, it is recommended that if one only needs a token with the below listed actions, that one uses the `alaio.token` contract instead of developing their own.
+The `alaio.token` sample system contract specifies the structures and actions that allow users to create, issue, and manage tokens for ALAIO based blockchains. It displays one way to implement a smart contract which allows for creation and management of tokens. It is feasible for one to generate a similar contract which suits different needs. However, it is recommended that if one only needs a token with the below listed actions, that one uses the `alaio.token` contract instead of developing their own.
 
 The `alaio.token` contract class also implements two useful public static methods: `get_supply` and `get_balance`. The first allows one to check the total supply of a specified token, created by an account and the second allows one to check the balance of a token for a specified account (the token creator account has to be specified as well).
 
@@ -46,7 +46,7 @@ memo | - the memo string to accompany the transaction.
 
 **Type:** void
 
-Allows from account to transfer to to account the quantity tokens. One account is debited and the other is credited with quantity tokens.
+Permits accounts to transfer a quantity of tokens to another account. the account that transfers is debited while the other is credited with the quantity of tokens
 
 Parameter Name | Description
 --- | ---
@@ -59,7 +59,7 @@ memo | - the memo string to accompany the transaction.
 
 **Type:** void
 
-Allows ram_payer to create an account owner with zero balance for token symbol at the expense of ram_payer.
+Allows ram_payer to generate an account owner without a balance for token symbol at the expense of ram_payer.
 
 Parameter Name | Description
 --- | ---
@@ -71,7 +71,7 @@ ram_payer | - the account that supports the cost of this action. More informatio
 
 **Type:** void
 
-This action is the opposite for open, it closes the account owner for token symbol.
+This action is the counter of open, it closes the account owner for token symbol.
 
 Parameter Name | Description
 --- | ---
