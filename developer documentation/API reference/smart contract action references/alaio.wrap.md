@@ -2,11 +2,11 @@
 
 **Type:** class
 
-The `alaio.wrap` system contract allows block producers to bypass authorization checks or run privileged actions with 15/21 producer approval and thus simplifies block producers superuser actions. It also makes these actions easier to audit.
+The `alaio.wrap` system contract grants block producers the ability to pass authorization checks or bypass privileged actions with 15/21 prodcuer approval and consequently clarifies block producers superuser actions. It also makes these actions easier to audit.
 
-It does not give block producers any additional powers or privileges that do not already exist within the ALAIO based blockchains. As it is implemented, in an ALAIO based blockchain, 15/21 block producers can change an account's permissions or modify an account's contract code if they decided it is beneficial for the blockchain and community. However, the current method is opaque and leaves undesirable side effects on specific system accounts, and thus the `alaio.wrap` contract solves this matter by providing an easier method of executing important governance actions.
+Block producters are not given any additional powers or privileges that do not already exist with the ALAIO based blockchains. While it is being implemented, in an ALAIO based blockchain, 15/21 block producers can alter an account's permissions or change an account's contract code if they deemed it is advantageous for the blockchain and community. On the other hand, the residing method is opaque and leaves unwanted side effects of certain system accounts, and thus the `alaio.wrap` contract resolves this issue by providing a simpler method of following through with important governance actions. 
 
-The only action implemented by the `alaio.wrap` system contract is the `exec` action. This action allows for execution of a transaction, which is passed to the exec method in the form of a packed transaction in json format via the 'trx' parameter and the `executer` account that executes the transaction. The same `executer` account will also be used to pay the RAM and CPU fees needed to execute the transaction.
+Only one actions is implemented by the `alaio.wrap` system contract and that is the `exec` actions. the actions permits for execution of a transaction, which is passed to the exec method in the configuration of a packed transaction in json form through the 'trx' parameter and the `executer` account that executes the arrangement. The same `executer` account will also be used to pay the RAM and CPU fees needed to execute the transaction.
 
 ## exec
 
