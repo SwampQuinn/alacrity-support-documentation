@@ -6,4 +6,4 @@
     * [Alaio.msig](https://developer.alacritys.net/docs/API_reference/smart_contract_action_references/alaio.msig.md)
     * [Alaio.system](https://developer.alacritys.net/docs/API_reference/smart_contract_action_references/alaio.system/alaio.system.md)
     * [Alaio.token](https://developer.alacritys.net/docs/API_reference/smart_contract_action_references/alaio.token.md)
-    * [Alaio.wrap](https://developer.alacritys.net/docs/API_reference/smart_contract_action_references/alaio.wrap.md)
+    * [Alaio.wrap](https://developer.alacritys.net/docs/API_reference/smart_contract_action_references/alaio.wrap.md)fsdf
