@@ -4,7 +4,7 @@
 
 The `alaio.token` sample system contract defines the structures and actions that allow users to create, issue, and manage tokens for ALAIO based blockchains. It demonstrates one way to implement a smart contract which allows for creation and management of tokens. It is possible for one to create a similar contract which suits different needs. However, it is recommended that if one only needs a token with the below listed actions, that one uses the `alaio.token` contract instead of developing their own.
 
-The `alaio.token` contract class also implements two useful public static methods: `get_supply` and `get_balance`. The first allows one to check the total supply of a specified token, created by an account and the second allows one to check the balance of a token for a specified account (the token creator account has to be specified as well).
+The `alaio.token` contract class also creates two useful public static methods: `get_supply` and `get_balance`. The first permits one to check the total supply of a specified token, created by an account and the second greants one to check the balance of a token for a defined account (the token creator account has to be defined as well).
 
 The `alaio.token` contract manages the set of tokens, accounts and their corresponding balances, by using two internal multi-index structures: the `accounts` and `stats`. The `accounts` multi-index table holds, for each row, instances of account object and the account object holds information about the balance of one token. The accounts table is scoped to an alaio account, and it keeps the rows indexed based on the token's symbol. This means that when one queries the accounts multi-index table for an account name the result is all the tokens that account holds at the moment.
 
@@ -14,7 +14,7 @@ Similarly, the stats multi-index table, holds instances of `currency_stats` obje
 
 **Type:** void
 
-Allows `issuer` account to create a token in supply of `maximum_supply`. If validation is successful a new entry in statstable for token symbol scope gets created.
+Permits `issuer` account to create a token in supply of `maximum_supply`. If validation is granted a new entry in statstable for token symbol scope gets generated.
 
 Parameter Name | Description
 --- | ---
@@ -35,7 +35,7 @@ quntity | - the amount of tokens to be issued,
 
 **Type:** void
 
-The opposite for create action, if all validations succeed, it debits the statstable.supply amount.
+The counter for create action, if every validation is approved, it debits the statstable.supply amount.
 
 Parameter Name | Description
 --- | ---
@@ -46,7 +46,7 @@ memo | - the memo string to accompany the transaction.
 
 **Type:** void
 
-Allows from account to transfer to to account the quantity tokens. One account is debited and the other is credited with quantity tokens.
+Permits from account to shift to an account the quantity tokens. The account is debited and the other is attributed with quantity tokens.
 
 Parameter Name | Description
 --- | ---
@@ -59,7 +59,7 @@ memo | - the memo string to accompany the transaction.
 
 **Type:** void
 
-Allows ram_payer to create an account owner with zero balance for token symbol at the expense of ram_payer.
+Permits ram_player to generate an account owner with no balance for token symbol at the expense of ram_player.
 
 Parameter Name | Description
 --- | ---
@@ -71,7 +71,7 @@ ram_payer | - the account that supports the cost of this action. More informatio
 
 **Type:** void
 
-This action is the opposite for open, it closes the account owner for token symbol.
+Close is an action that is opposite for open, it closes the account owner for token symbol.
 
 Parameter Name | Description
 --- | ---
